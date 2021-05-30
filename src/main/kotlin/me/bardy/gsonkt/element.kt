@@ -31,10 +31,34 @@ import com.google.gson.JsonNull
 import com.google.gson.JsonObject
 import com.google.gson.JsonPrimitive
 
+/**
+ * Convert this [JsonElement] to a [JsonObject], returning null if this isn't a [JsonObject].
+ *
+ * @return this [JsonElement] as a [JsonObject], or null if it isn't a [JsonObject]
+ * @since 1.0
+ */
 public fun JsonElement.toObjectOrNull(): JsonObject? = this as? JsonObject
 
+/**
+ * Convert this [JsonElement] to a [JsonArray], returning null if this isn't a [JsonArray].
+ *
+ * @return this [JsonElement] as a [JsonArray], or null if it isn't a [JsonArray]
+ * @since 1.0
+ */
 public fun JsonElement.toArrayOrNull(): JsonArray? = this as? JsonArray
 
+/**
+ * Convert this [JsonElement] to a [JsonPrimitive], returning null if this isn't a [JsonPrimitive].
+ *
+ * @return this [JsonElement] as a [JsonPrimitive], or null if it isn't a [JsonPrimitive]
+ * @since 1.0
+ */
 public fun JsonElement.toPrimitiveOrNull(): JsonPrimitive? = this as? JsonPrimitive
 
+/**
+ * Convert this [JsonElement] to a [JsonNull], returning null if it isn't a [JsonNull].
+ *
+ * @return this [JsonElement] as a [JsonNull], or null if it isn't a [JsonNull]
+ * @since 1.0
+ */
 public fun JsonElement.toNull(): JsonNull? = this as? JsonNull

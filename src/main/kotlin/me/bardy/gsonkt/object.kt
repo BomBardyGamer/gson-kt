@@ -28,16 +28,62 @@ package me.bardy.gsonkt
 import com.google.gson.JsonElement
 import com.google.gson.JsonObject
 
+/**
+ * Set the value of the given [key] in this object to the given [value], replacing it if it
+ * already exists.
+ *
+ * @param key the key
+ * @param value the value
+ * @since 1.0
+ */
 public operator fun JsonObject.set(key: String, value: JsonElement): Unit = add(key, value)
 
+/**
+ * Set the value of the given [key] in this object to the given [value], replacing it if it
+ * already exists.
+ *
+ * @param key the key
+ * @param value the value
+ * @since 1.0
+ */
 public operator fun JsonObject.set(key: String, value: String): Unit = addProperty(key, value)
 
+/**
+ * Set the value of the given [key] in this object to the given [value], replacing it if it
+ * already exists.
+ *
+ * @param key the key
+ * @param value the value
+ * @since 1.0
+ */
 public operator fun JsonObject.set(key: String, value: Number): Unit = addProperty(key, value)
 
+/**
+ * Set the value of the given [key] in this object to the given [value], replacing it if it
+ * already exists.
+ *
+ * @param key the key
+ * @param value the value
+ * @since 1.0
+ */
 public operator fun JsonObject.set(key: String, value: Boolean): Unit = addProperty(key, value)
 
+/**
+ * Set the value of the given [key] in this object to the given [value], replacing it if it
+ * already exists.
+ *
+ * @param key the key
+ * @param value the value
+ * @since 1.0
+ */
 public operator fun JsonObject.set(key: String, value: Char): Unit = addProperty(key, value)
 
+/**
+ * Convert this [JsonObject] to a [MutableIterable], so it can be iterated over like a normal [Map].
+ *
+ * @return a [MutableIterable] for iterating over the elements of this [JsonObject]
+ * @since 1.0
+ */
 public fun JsonObject.asIterable(): MutableIterable<Map.Entry<String, JsonElement>> =
     object : MutableIterable<Map.Entry<String, JsonElement>> {
         override fun iterator(): MutableIterator<Map.Entry<String, JsonElement>> = entrySet().iterator()

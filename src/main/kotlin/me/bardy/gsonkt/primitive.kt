@@ -27,4 +27,12 @@ package me.bardy.gsonkt
 
 import com.google.gson.JsonPrimitive
 
+/**
+ * Get this [JsonPrimitive] as a boolean, converting it from a string using [String.toBooleanStrict] if
+ * this is not already a boolean.
+ *
+ * @return this [JsonPrimitive] as a boolean
+ * @throws IllegalArgumentException if the underlying [String.toBooleanStrict] call fails
+ * @since 1.0
+ */
 public fun JsonPrimitive.toBooleanStrict(): Boolean = if (!isBoolean) asString.toBooleanStrict() else asBoolean

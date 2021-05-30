@@ -31,7 +31,21 @@ import com.google.gson.GsonBuilder
 @DslMarker
 public annotation class GsonDsl
 
+/**
+ * Construct a new [Gson] instance using the provided [builder].
+ *
+ * @param builder the builder to build from
+ * @return a built [Gson] instance
+ * @since 1.0
+ */
 @GsonDsl
 public inline fun gson(builder: GsonBuilder.() -> Unit): Gson = GsonBuilder().apply(builder).create()
 
+/**
+ * Construct a new [Gson] instance using this [Gson] instance's current values and the provided [builder].
+ *
+ * @param builder the builder to build from
+ * @return a built [Gson] instance based on this [Gson] instance
+ * @since 1.1
+ */
 public fun Gson.newBuilder(builder: GsonBuilder.() -> Unit): Gson = newBuilder().apply(builder).create()

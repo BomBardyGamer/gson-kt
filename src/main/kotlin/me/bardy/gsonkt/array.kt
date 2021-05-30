@@ -28,14 +28,62 @@ package me.bardy.gsonkt
 import com.google.gson.JsonArray
 import com.google.gson.JsonElement
 
+/**
+ * Add a [boolean] to this [JsonArray]. Allows doing this with += syntax.
+ *
+ * This is equivalent to calling [JsonArray.add].
+ *
+ * @param boolean the boolean to add
+ * @since 1.0
+ */
 public operator fun JsonArray.plusAssign(boolean: Boolean): Unit = add(boolean)
 
+/**
+ * Add a [character] to this [JsonArray]. Allows doing this with += syntax.
+ *
+ * This is equivalent to calling [JsonArray.add].
+ *
+ * @param character the character to add
+ * @since 1.0
+ */
 public operator fun JsonArray.plusAssign(character: Char): Unit = add(character)
 
+/**
+ * Add a [number] to this [JsonArray]. Allows doing this with += syntax.
+ *
+ * This is equivalent to calling [JsonArray.add].
+ *
+ * @param number the number to add
+ * @since 1.0
+ */
 public operator fun JsonArray.plusAssign(number: Number): Unit = add(number)
 
+/**
+ * Add a [string] to this [JsonArray]. Allows doing this with += syntax.
+ *
+ * This is equivalent to calling [JsonArray.add].
+ *
+ * @param string the string to add
+ * @since 1.0
+ */
 public operator fun JsonArray.plusAssign(string: String): Unit = add(string)
 
+/**
+ * Add a JSON [element] to this [JsonArray]. Allows doing this with += syntax.
+ *
+ * This is equivalent to calling [JsonArray.add].
+ *
+ * @param element the JSON element to add
+ * @since 1.0
+ */
 public operator fun JsonArray.plusAssign(element: JsonElement): Unit = add(element)
 
+/**
+ * Add all values from a JSON [array] to this [JsonArray]. Allows doing this with += syntax.
+ *
+ * This is equivalent to calling [JsonArray.addAll].
+ *
+ * @param array the other array to add the values from
+ * @since 1.0
+ */
 public operator fun JsonArray.plusAssign(array: JsonArray): Unit = addAll(array)

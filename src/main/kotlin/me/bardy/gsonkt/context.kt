@@ -29,6 +29,28 @@ import com.google.gson.JsonDeserializationContext
 import com.google.gson.JsonElement
 import com.google.gson.JsonSerializationContext
 
+/**
+ * Serialize the given object [src] of type [T] into a [JsonElement].
+ *
+ * This will create a new [com.google.gson.reflect.TypeToken] under the hood, with the use of [typeOf], so it can support
+ * generic parameters.
+ *
+ * @param T the type to serialize
+ * @param src the instance of the type to serialize
+ * @return the serialized [JsonElement]
+ * @since 1.0
+ */
 public inline fun <reified T> JsonSerializationContext.serialize(src: Any): JsonElement = serialize(src, typeOf<T>().type)
 
+/**
+ * Deserialize the given [JsonElement] into an object of type [T].
+ *
+ * This will create a new [com.google.gson.reflect.TypeToken] under the hood, with the use of [typeOf], so it can support
+ * generic parameters.
+ *
+ * @param T the type to deserialize to
+ * @param json the [JsonElement] to deserialize from
+ * @return the deserialized type
+ * @since 1.0
+ */
 public inline fun <reified T> JsonDeserializationContext.deserialize(json: JsonElement): T = deserialize(json, typeOf<T>().type)

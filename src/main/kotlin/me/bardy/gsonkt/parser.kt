@@ -30,9 +30,26 @@ import com.google.gson.JsonParser
 import com.google.gson.stream.JsonReader
 import java.io.Reader
 
+/**
+ * Parse this string to a [JsonElement], using [JsonParser.parseString].
+ *
+ * @return a parsed [JsonElement] from this string
+ * @since 1.0
+ */
 public fun String.parseToJson(): JsonElement = JsonParser.parseString(this)
 
+/**
+ * Parse the contents of this reader to a [JsonElement], using [JsonParser.parseReader].
+ *
+ * @return a parsed [JsonElement] from the contents of this reader
+ * @since 1.0
+ */
 public fun Reader.parseToJson(): JsonElement = JsonParser.parseReader(this)
 
+/**
+ * Parse the contents of this reader to a [JsonElement], using [JsonParser.parseReader].
+ *
+ * @return a parsed [JsonElement] from the contents of this reader
+ * @since 1.0
+ */
 public fun JsonReader.parseToJson(): JsonElement = JsonParser.parseReader(this)
-
