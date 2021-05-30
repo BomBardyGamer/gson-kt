@@ -31,4 +31,7 @@ import com.google.gson.GsonBuilder
 @DslMarker
 public annotation class GsonDsl
 
+@GsonDsl
 public inline fun gson(builder: GsonBuilder.() -> Unit): Gson = GsonBuilder().apply(builder).create()
+
+public fun Gson.newBuilder(builder: GsonBuilder.() -> Unit): Gson = newBuilder().apply(builder).create()
