@@ -79,6 +79,31 @@ public operator fun JsonObject.set(key: String, value: Boolean): Unit = addPrope
 public operator fun JsonObject.set(key: String, value: Char): Unit = addProperty(key, value)
 
 /**
+ * The entry set as a property.
+ *
+ * @since 1.2
+ */
+public val JsonObject.entries: Set<Map.Entry<String, JsonElement>>
+    get() = entrySet()
+
+/**
+ * The key set as a property.
+ *
+ * @since 1.2
+ */
+public val JsonObject.keys: Set<String>
+    get() = keySet()
+
+/**
+ * Returns true if this object contains the specified [key], false otherwise.
+ *
+ * @return true if this object contains the specified [key], false otherwise
+ * @since 1.2
+ * @see JsonObject.has
+ */
+public operator fun JsonObject.contains(key: String): Boolean = has(key)
+
+/**
  * Convert this [JsonObject] to a [MutableIterable], so it can be iterated over like a normal [Map].
  *
  * @return a [MutableIterable] for iterating over the elements of this [JsonObject]
